@@ -1,0 +1,214 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_current_weather"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_activity_background_color"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".CurrentWeatherFragment">
+
+    <com.permoveo.weworkweather.views.BounceProgressBar xmlns:bpb="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/bounce_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        bpb:shape="circle"
+        bpb:singleSrcSize="14dp"
+        bpb:speed="250"
+        bpb:src="#fff"
+
+
+        />
+
+<RelativeLayout
+    android:id="@+id/rl_main_weather_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tv_city_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:text="Brooklyn, NY"
+        android:textColor="#fff"
+        android:textSize="@dimen/city_name_text_sz" />
+
+    <TextView
+        android:id="@+id/tv_last_updated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_city_name"
+        android:layout_centerHorizontal="true"
+        android:text="Last updated at 12:18 AM"
+        android:textColor="@color/weather_text_color_secondary"
+        android:textSize="@dimen/current_weather_text_sz" />
+
+    <TextView
+        android:id="@+id/tv_last_updated_today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_last_updated"
+        android:layout_centerHorizontal="true"
+        android:text="Today"
+        android:textColor="@color/weather_text_color_secondary"
+        android:textSize="@dimen/current_weather_text_sz"></TextView>
+
+
+    <ImageView
+        android:id="@+id/iv_weather_icon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/ic_partly_cloudy" />
+
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_weather_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="Clear"
+        android:textColor="@color/weather_text_color_main"
+        android:textSize="@dimen/current_weather_desc_sz" />
+
+    <TextView
+        android:id="@+id/tv_weather_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_description"
+        android:layout_centerHorizontal="true"
+        android:text="Clear skies, good vibes!"
+        android:textColor="@color/weather_text_color_secondary"
+        android:textSize="@dimen/city_name_text_sz" />
+
+
+    <View
+        android:id="@+id/view_divider"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_below="@id/tv_weather_comment"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="17dp"
+        android:background="@color/divider_color"></View>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_weather_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_divider"
+        android:layout_marginTop="1dp">
+
+
+        <TextView
+            android:id="@+id/tv_weather_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="25"
+            android:textColor="@color/weather_text_color_main"
+            android:textSize="@dimen/current_weather_unit_sz" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_rain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/tv_weather_unit"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/iv_rain"
+                android:layout_width="12dp"
+                android:layout_height="15dp"
+                android:background="@drawable/ic_rain_percentage" />
+
+            <TextView
+                android:id="@+id/tv_rain_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="2dp"
+                android:text="43%"
+                android:textColor="@color/weather_text_color_main"
+                android:textSize="13sp"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_wind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/ll_rain"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/tv_weather_unit"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/iv_wind"
+                android:layout_width="14dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="-2dp"
+                android:background="@drawable/ic_windspeed" />
+
+            <TextView
+                android:id="@+id/tv_wind_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="2dp"
+                android:text="43%"
+                android:textColor="@color/weather_text_color_main"
+                android:textSize="13sp"></TextView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_pressure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/ll_wind"
+            android:layout_marginLeft="80dp"
+            android:layout_toRightOf="@id/tv_weather_unit"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/iv_pressure"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="-2dp"
+                android:background="@drawable/ic_pressure" />
+
+            <TextView
+                android:id="@+id/tv_pressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="2dp"
+                android:text="43%"
+                android:textColor="@color/weather_text_color_main"
+                android:textSize="13dp"></TextView>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
+</RelativeLayout>

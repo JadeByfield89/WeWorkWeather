@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:background="@color/main_activity_background_color">
+
+
+    <TextView
+        android:id="@+id/tv_forecast_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Tomorrow"
+        android:textColor="@color/weather_text_color_main"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_forecast_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_forecast_day"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="3dp"
+        android:text="It's cold as fuck!"
+        android:textColor="@color/weather_text_color_secondary"
+        android:textSize="14sp"></TextView>
+
+
+    <ImageView
+        android:id="@+id/iv_weather_icon"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_partly_cloudy"></ImageView>
+
+    <TextView
+        android:id="@+id/tv_high"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@id/iv_weather_icon"
+        android:text="High"
+        android:textColor="@color/weather_text_color_secondary"
+        android:textSize="12sp"></TextView>
+
+    <TextView
+        android:id="@+id/tv_high_disp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_high"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/iv_weather_icon"
+        android:text="45"
+        android:textColor="@color/weather_text_color_main"
+        android:textSize="12sp" />
+
+
+    <TextView
+        android:id="@+id/tv_low"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@id/tv_high_disp"
+        android:text="Low"
+        android:textColor="@color/weather_text_color_secondary"
+        android:textSize="12sp"></TextView>
+
+    <TextView
+        android:id="@+id/tv_low_disp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_low"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/tv_high_disp"
+        android:text="15"
+        android:textColor="@color/weather_text_color_main"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:background="@color/weather_text_color_main"></View>
+
+
+</RelativeLayout>
